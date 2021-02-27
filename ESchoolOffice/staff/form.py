@@ -18,6 +18,9 @@ class StaffForm(forms.ModelForm):
     class Meta:
         model = models.Staff
         fields = '__all__'
+        widgets = {
+            'staff_status': forms.RadioSelect()
+        }
 
 
 class StaffLeaveForm(forms.ModelForm):
