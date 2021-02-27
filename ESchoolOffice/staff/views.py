@@ -15,7 +15,7 @@ def designation(request):
 def leavetype(request):
     forms = form.LeaveTypeForm
     if request.method == 'POST':
-        forms =form.LeaveTypeForm
+        forms = form.LeaveTypeForm(request.POST)
         if forms.is_valid():
             forms.save()
     return render(request, 'staff/leavetype.html', {'form': forms})
