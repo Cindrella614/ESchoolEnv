@@ -19,7 +19,9 @@ class StaffForm(forms.ModelForm):
         model = models.Staff
         fields = '__all__'
         widgets = {
-            'staff_status': forms.RadioSelect()
+            'staff_dob': forms.DateInput(),
+            'staff_active': forms.CheckboxInput(),
+            'staff_status': forms.RadioSelect(),
         }
 
 
