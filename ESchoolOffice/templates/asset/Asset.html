@@ -10,6 +10,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body id="top">
+<form method="post">
+    {% csrf_token %}
 
 <div class="container">
   <h2>Asset</h2>
@@ -29,8 +31,8 @@
                         <div class="col-md-3 text-right">
                            Asset Name: 
                         </div>
-                        <div class="col-md-6 bg-warning">
-                        vdf
+                        <div class="col-md-6">
+                            {{form.asset_name}}
                         </div>
                     </div>
 
@@ -42,6 +44,7 @@
                             Description: 
                         </div>
                         <div class="col-md-6">
+                            {{form.asset_description}}
                         </div>
                     </div>
                     <div class="row">
@@ -69,8 +72,29 @@
             </div>
     </div>
 </div>
-</div>
-
+    <div class="container">
+    <div>
+        <table border="1">
+            <tr>
+                <th>Sl No</th>
+                <th>Asset Name</th>
+                <th>Asset Description</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            {% for obj in data %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{obj.asset_name}}</td>
+                <td>{{obj.asset_description}}</td>
+                <td><a href="{% url 'asset:edit_asset' pk=obj.id %}">Edit</a></td>
+                <td><a href="{% url 'asset:delete_asset' pk=obj.id %}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    </div>
+</form>
 
 </body>
 </html>

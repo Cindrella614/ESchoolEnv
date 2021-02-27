@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import date
+
 # Create your models here.
 
 
@@ -25,7 +25,7 @@ class Asset(models.Model):
 
 class AssetManagementIn(models.Model):
     merchant = models.ForeignKey(Merchant, on_delete=models.RESTRICT)
-    assetmgmtin_date = models.DateField(default=date.today)
+    assetmgmtin_date = models.DateField()
     assetmgmtin_billno = models.CharField(max_length=20, unique=True)
     assetmgmtin_billamount = models.IntegerField()
 
@@ -47,7 +47,7 @@ class AssetManagementDetails(models.Model):
 
 class AssetManagementOut(models.Model):
     asset = models.ForeignKey(Asset, on_delete=models.RESTRICT)
-    assetmgmtout_date = models.DateField(default=date.today)
+    assetmgmtout_date = models.DateField()
     assetmgmtout_qty = models.IntegerField()
     assetmgmtout_particulars = models.CharField(max_length=1000)
 

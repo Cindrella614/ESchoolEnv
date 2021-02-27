@@ -9,58 +9,58 @@
 <link href="CSS/style.css" rel="stylesheet" type="text/css" media="all">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
-<body id="top">
+    <body id="top">
+       <form action="create" method="post">
+        {% csrf_token %}
+    <div class="container">
+      <h2>PTA Committee</h2>
 
+      <div class="row">
+       <div class="col-md-12">
 
-	<div class="container">
-  <h2>PTA Committee</h2>
-
-  <div class="row">
-   <div class="col-md-12">
-
-   	<div class="card table-bordered">
-                <div class="card-header">
-                    PTA Committee
-                </div>
-                <div class="card-body">
-                    <div class="row card-body2">
-
-                    	<div class="col-md-1">
-                        </div>
-
-                        <div class="col-md-3 text-right">
-                            Designation Name: 
-                        </div>
-
-                        <div class="col-md-6 bg-warning">
-                            {{form.pta_designation_name}}
-                        </div>
-
+        <div class="card table-bordered">
+                    <div class="card-header">
+                        PTA Committee
                     </div>
+                    <div class="card-body">
+                        <div class="row card-body2">
 
-                     <div class="row btn-div">
-                        <div class="col-md-4 card-body2">
-                        </div>
-                        <div class="col-md-4">
-                        
-                        <button class="btn btn-primary btn-btn">
-                            Reset
-                        </button>
-                        </div>
-                        
-                        <div class="col-md-4">
-                        <button class="btn btn-success btn-btn btn-save" onclick="return confirm('Are you sure you want to save this PTA Designation');">
-                            Save
-                        </button>
+                            <div class="col-md-1">
+                            </div>
+
+                            <div class="col-md-3 text-right">
+                                Designation Name:
+                            </div>
+
+                            <div class="col-md-6 bg-warning">
+                                {{form.pta_designation_name}}
+                            </div>
+
                         </div>
 
-                    </div>
-                 </div>
+                         <div class="row btn-div">
+                            <div class="col-md-4 card-body2">
+                            </div>
+                            <div class="col-md-4">
+
+                            <button class="btn btn-primary btn-btn">
+                                Reset
+                            </button>
+                            </div>
+
+                            <div class="col-md-4">
+                            <button class="btn btn-success btn-btn btn-save" onclick="return confirm('Are you sure you want to save this PTA Designation');">
+                                Save
+                            </button>
+                            </div>
+
+                        </div>
+                     </div>
+        </div>
+
+       </div>
     </div>
-
-   </div>
-</div>
-
+    </form>
 
 </body>
 </html>

@@ -10,7 +10,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body id="top">
-
+<form method="post">
+    {% csrf_token %}
 <div class="container">
   <h2>Merchant</h2>
 
@@ -30,7 +31,7 @@
                            Merchant Name: 
                         </div>
                         <div class="col-md-6 bg-warning">
-                        vdf
+                            {{form.mer_name}}
                         </div>
                     </div>
 
@@ -42,6 +43,7 @@
                             Address: 
                         </div>
                         <div class="col-md-6">
+                            {{form.mer_address}}
                         </div>
                     </div>
 
@@ -54,6 +56,7 @@
                             Contact No: 
                         </div>
                         <div class="col-md-6">
+                            {{form.mer_contactno}}
                         </div>
                     </div>
                      <div class="row card-body2">
@@ -65,6 +68,7 @@
                             Email: 
                         </div>
                         <div class="col-md-6">
+                            {{form.mer_email}}
                         </div>
                     </div>
 
@@ -93,8 +97,7 @@
             </div>
     </div>
 </div>
-</div>
 
-
+</form>
 </body>
 </html>

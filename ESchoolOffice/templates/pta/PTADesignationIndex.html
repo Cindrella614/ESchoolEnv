@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div style="height:100px">Index Of PTA Designation</div>
+{% if pta_designation_list %}
+    <table>
+        <tr>
+        <th>Designation</th>
+        <th>Actions</th>
+        </tr>
+    {% for designation in pta_designation_list %}
+        <tr>
+        <td>{{ designation.pta_designation_name }}</td>
+        <td><a href="/pta/designation/{{ question.id }}/">View </a></td>
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>No PTA Designations Added.</p>
+{% endif %}
+</body>
+</html>
+
+

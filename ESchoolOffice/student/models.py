@@ -1,7 +1,7 @@
 from datetime import date
 from django.db import models
 from django.utils import timezone
-from user_settings.models import Mothertongue, State, Relation
+from user_settings.models import Mothertongue, State, Relation, Religion,Caste
 from academic_settings.models import AcademicYear, Standard, ExamMark,ClassDivision
 
 
@@ -14,8 +14,8 @@ class Student(models.Model):
     state = models.ForeignKey(State, on_delete=models.RESTRICT)
     stud_email = models.EmailField(max_length=30)
     stud_adharno = models.CharField(max_length=12)
-    stud_religion = models.CharField(max_length=50)
-    stud_caste = models.CharField(max_length=50)
+    religion = models.ForeignKey(Religion, on_delete=models.RESTRICT, default=0)
+    caste = models.ForeignKey(Caste, on_delete=models.RESTRICT, default=0)
     stud_nationality = models.CharField(max_length=30)
     mothertongue = models.ForeignKey(Mothertongue, on_delete=models.RESTRICT)
     stud_dob = models.DateField()
