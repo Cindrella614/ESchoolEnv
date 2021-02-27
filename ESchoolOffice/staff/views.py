@@ -23,6 +23,10 @@ def leavetype(request):
 
 def staff(request):
     forms = form.StaffForm
+    if request.method == 'POST':
+        forms = form.StaffForm(request.POST)
+        if forms.is_valid():
+            forms.save()
     return render(request, 'staff/staffdetails.html', {'form': forms})
 
 
