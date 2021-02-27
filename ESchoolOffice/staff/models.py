@@ -3,7 +3,7 @@ from academic_settings.models import Subject
 
 
 class Designation(models.Model):
-    desig_name = models.CharField(max_length=100)
+    desig_name = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
         return self.desig_name
