@@ -6,8 +6,10 @@ from . import form
 def designation(request):
     forms = form.DesignationForm
     if request.method == 'POST':
-        forms.save()
-        return HttpResponse("Form saved")
+        forms = form.DesignationForm(request.POST)
+        if forms.is_valid():
+            form.save()
+            return HttpResponse("Form saved")
     return render(request, 'staff/designation.html', {'form': forms})
 
 
