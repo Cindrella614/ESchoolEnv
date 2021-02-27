@@ -8,7 +8,7 @@ def designation(request):
     if request.method == 'POST':
         forms = form.DesignationForm(request.POST)
         if forms.is_valid():
-            form.save()
+            forms.save()
             return HttpResponse("Form saved")
     return render(request, 'staff/designation.html', {'form': forms})
 
