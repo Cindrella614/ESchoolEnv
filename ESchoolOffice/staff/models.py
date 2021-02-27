@@ -10,7 +10,7 @@ class Designation(models.Model):
 
 
 class LeaveType(models.Model):
-    leave_type = models.CharField(max_length=100)
+    leave_type = models.CharField(max_length=100, unique=True)
 
     def __str__(self):
         return self.leave_type
