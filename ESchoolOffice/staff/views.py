@@ -9,12 +9,15 @@ def designation(request):
         forms = form.DesignationForm(request.POST)
         if forms.is_valid():
             forms.save()
-            return HttpResponse("Form saved")
     return render(request, 'staff/designation.html', {'form': forms})
 
 
 def leavetype(request):
     forms = form.LeaveTypeForm
+    if request.method == 'POST':
+        forms =form.LeaveTypeForm
+        if forms.is_valid():
+            forms.save()
     return render(request, 'staff/leavetype.html', {'form': forms})
 
 
