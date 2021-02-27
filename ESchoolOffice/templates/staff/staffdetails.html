@@ -5,6 +5,7 @@
     <title>Staff Details</title>
 </head>
 <body>
-    {{ form }}
+    {% csrf_token %}
+    {{ form.as_p }}
 </body>
 </html>
