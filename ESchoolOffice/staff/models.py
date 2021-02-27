@@ -34,7 +34,7 @@ class Staff(models.Model):
     staff_status = models.CharField(max_length=1, choices=STAFF_STATUS, unique=True)
     desig_id = models.ForeignKey(Designation, on_delete=models.RESTRICT)
     staff_adharno = models.IntegerField()
-    staff_active = models.IntegerField(choices=STAFF_ACTIVE)
+    staff_active = models.BooleanField(choices=STAFF_ACTIVE)
 
     def __str__(self):
         return self.staff_name
