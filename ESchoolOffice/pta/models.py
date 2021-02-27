@@ -5,7 +5,7 @@ from student.models import Parent
 from academic_settings.models import AcademicYear
 
 class PTADesignation(models.Model):
-    pta_designation_name = models.CharField(max_length=50)
+    pta_designation_name = models.CharField(max_length=50,blank=False)
 
     def __str__(self):
         return self.pta_designation_name
