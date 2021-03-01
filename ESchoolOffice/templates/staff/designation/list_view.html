@@ -1,9 +1,18 @@
 <!-- View extended from base -->
-{% extends "./../basic/base.html" %}
+{% extends "../basic/base.html" %}
 
 <!-- Staff Title -->
 {% block staff_title %}
     List
+{% endblock %}
+
+<!-- Display Messages if any -->
+{% block staff_message %}
+{% if messages %}
+    {% for msg in messages %}
+        {{ msg }}
+    {% endfor %}
+{% endif %}
 {% endblock %}
 
 <!-- Staff Content -->
@@ -11,7 +20,7 @@
     <h2>Designation List</h2>
     <ul>
         {% for designation in designation_list %}
-            <li> {{ designation.desig_name }} </li>
+            <li> {{ designation.desig_name }} &emsp; <{{ designation.id }}> </li>
         {% endfor %}
     </ul>
 {% endblock %}
