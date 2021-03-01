@@ -1,13 +1,14 @@
 from django.urls import path
 from django.conf.urls import url
-from . import views
+from .views import *
 
 app_name = 'staff'
 
 urlpatterns = [
-    url(r'^staffdetails/$', views.staff, name="staffDetails"),
-    url(r'^designation/create/$', views.designationCreate, name="create_designation"),
-    url(r'^leavetype/$', views.leavetype, name="leaveType"),
-    url(r'^staffleave/$', views.staffleave, name="staffLeave"),
-    url(r'^teachersubjects/$', views.teachersubjects, name="teacherSubjects"),
+    url(r'^staffdetails/$', staff, name="staffDetails"),
+    url(r'^designation/create/$', designationCreate, name="create_designation"),
+    url(r'^designation/$', DesignationList.as_view()),
+    url(r'^leavetype/$', leavetype, name="leaveType"),
+    url(r'^staffleave/$', staffleave, name="staffLeave"),
+    url(r'^teachersubjects/$', teachersubjects, name="teacherSubjects"),
 ]
