@@ -29,7 +29,7 @@ class DesignationUpdate(SuccessMessageMixin, UpdateView):
 
 class DesignationDelete(SuccessMessageMixin, DeleteView):
     model = models.Designation
-    context_object_name = "desig_name"
+    context_object_name = "desig"
     success_url = reverse_lazy('staff:designation-list')
     success_message = "Designation Deleted"
     template_name = "staff/designation/designation_confirm_delete.html"

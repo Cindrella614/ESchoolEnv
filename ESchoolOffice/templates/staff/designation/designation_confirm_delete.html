@@ -1,0 +1,12 @@
+<!-- View extended from base.html-->
+{% extends "./designation_detail.html" %}
+
+
+<!-- Delete Confirm -->
+{% block delete_confirm %}
+    <form method="POST">
+        {% csrf_token %}
+        <p>Are you sure you want to delete {{ desig }}? </p>
+        <input type="submit" name="Confirm">
+    </form>
+{% endblock %}
