@@ -23,7 +23,11 @@
         <li> {{ designation.desig_name }} &emsp;
             <a href="{% url 'staff:designationUpdate' pk=designation.id %}">
                 < Update {{ designation.id }}>
-            </a>>
+            </a>
+                &emsp;
+            <a href="{% url 'staff:designationDelete' pk=designation.id %}">
+                < Delete {{ designation.id }} >
+            </a>
         </li>
         {% endfor %}
     </ul>

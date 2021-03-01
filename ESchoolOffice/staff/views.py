@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.urls import reverse_lazy
 from . import form, models
 from django.views.generic import ListView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.messages.views import SuccessMessageMixin
 
 class DesignationList(ListView):
@@ -25,6 +25,14 @@ class DesignationUpdate(SuccessMessageMixin, UpdateView):
     template_name = "staff/designation/designation_form.html"
     success_message = "Designation Updated"
     success_url = "/staff/designation"
+
+
+class DesignationDelete(SuccessMessageMixin, DeleteView):
+    model = models.Designation
+    context_object_name = "desig_name"
+    success_url = reverse_lazy('staff:designation-list')
+    success_message = "Designation Deleted"
+    template_name = "staff/designation/designation_confirm_delete.html"
 
 
 def leavetype(request):
