@@ -5,10 +5,17 @@ from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.messages.views import SuccessMessageMixin
 
+
 class DesignationList(ListView):
     model = models.Designation
     template_name = "staff/designation/list_view.html"
     context_object_name = "designation_list"
+
+
+class LeaveTypeList(ListView):
+    model = models.LeaveType
+    template_name = "staff/leavetype/list_view.html"
+    context_object_name = "leavetype_list"
 
 
 class DesignationCreate(SuccessMessageMixin, CreateView):
@@ -16,6 +23,14 @@ class DesignationCreate(SuccessMessageMixin, CreateView):
     template_name = "staff/designation/designation_form.html"
     fields = '__all__'
     success_url = "/staff/designation"
+    success_message = "New Designation added"
+
+
+class LeaveTypeCreate(SuccessMessageMixin, CreateView):
+    model = models.LeaveType
+    template_name = "staff/leavetype/leavetype_form.html"
+    fields = '__all__'
+    success_url = reverse_lazy("staff:leavetype-list")
     success_message = "New Designation added"
 
 
