@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from . import form
 from django.views.generic import ListView
+from django.views.generic.edit import FormView
 from .models import *
 
 
@@ -19,6 +20,16 @@ class DesignationList(ListView):
     model = Designation
     template_name = "staff/designation/list_view.html"
     context_object_name = "designation_list"
+
+
+class DesignationCreate(FormView):
+    template_name = "staff/designation/create.html"
+    form_class = form.DesignationForm
+    success_url = "/staff/designation/"
+
+    def form_valid(self, forms):
+        forms.save()
+        return super().form_valid(forms)
 
 
 def leavetype(request):
