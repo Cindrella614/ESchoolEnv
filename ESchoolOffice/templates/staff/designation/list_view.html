@@ -1,0 +1,17 @@
+<!-- View extended from base -->
+{% extends "./../basic/base.html" %}
+
+<!-- Title Block -->
+{% block staff_title %}
+    List
+{% endblock %}
+
+<!-- Designation List -->
+{% block staff_content %}
+    <h2>Designation List</h2>
+    <ul>
+        {% for designation in object_list %}
+            <li> {{ designation.desig_name }} </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
