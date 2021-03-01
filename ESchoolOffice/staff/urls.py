@@ -6,7 +6,7 @@ app_name = 'staff'
 
 urlpatterns = [
     url(r'^staffdetails/$', staff, name="staffDetails"),
-    url(r'^designation/create/$', designationCreate, name="create_designation"),
+    url(r'^designation/create/$', DesignationCreate.as_view()),
     url(r'^designation/$', DesignationList.as_view()),
     url(r'^leavetype/$', leavetype, name="leaveType"),
     url(r'^staffleave/$', staffleave, name="staffLeave"),
