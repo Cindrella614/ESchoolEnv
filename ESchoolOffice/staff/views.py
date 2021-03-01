@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from . import form
+from . import form, models
 from django.views.generic import ListView
-from django.views.generic.edit import FormView
-from .models import *
+from django.views.generic.edit import CreateView
+from django.contrib.messages.views import SuccessMessageMixin
 
 
 def designationCreate(request):
@@ -17,19 +17,17 @@ def designationCreate(request):
 
 
 class DesignationList(ListView):
-    model = Designation
+    model = models.Designation
     template_name = "staff/designation/list_view.html"
     context_object_name = "designation_list"
 
 
-class DesignationCreate(FormView):
-    template_name = "staff/designation/create.html"
-    form_class = form.DesignationForm
-    success_url = "/staff/designation/"
-
-    def form_valid(self, forms):
-        forms.save()
-        return super().form_valid(forms)
+class DesignationCreate(SuccessMessageMixin, CreateView):
+    model = models.Designation
+    template_name = "staff/designation/designation_form.html"
+    fields = '__all__'
+    success_url = "/staff/designation"
+    success_message = "New Designation added"
 
 
 def leavetype(request):
