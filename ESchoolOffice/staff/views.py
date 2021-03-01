@@ -3,13 +3,13 @@ from django.http import HttpResponse
 from . import form
 
 
-def designation(request):
+def designationCreate(request):
     forms = form.DesignationForm
     if request.method == 'POST':
         forms = form.DesignationForm(request.POST)
         if forms.is_valid():
             forms.save()
-    return render(request, 'staff/designation.html', {'form': forms})
+    return render(request, 'staff/designation/create.html', {'form': forms})
 
 
 def leavetype(request):
