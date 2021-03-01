@@ -20,7 +20,11 @@
     <h2>Designation List</h2>
     <ul>
         {% for designation in designation_list %}
-            <li> {{ designation.desig_name }} &emsp; <{{ designation.id }}> </li>
+        <li> {{ designation.desig_name }} &emsp;
+            <a href="{% url 'staff:designationUpdate' pk=designation.id %}">
+                < Update {{ designation.id }}>
+            </a>>
+        </li>
         {% endfor %}
     </ul>
 {% endblock %}
