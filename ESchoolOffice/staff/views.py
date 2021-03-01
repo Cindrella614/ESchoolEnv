@@ -18,6 +18,7 @@ def designationCreate(request):
 class DesignationList(ListView):
     model = Designation
     template_name = "staff/designation/list_view.html"
+    context_object_name = "designation_list"
 
 
 def leavetype(request):
