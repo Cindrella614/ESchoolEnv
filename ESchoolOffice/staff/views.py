@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from . import form
+from django.views.generic import ListView
+from .models import *
 
 
 def designationCreate(request):
@@ -11,6 +13,11 @@ def designationCreate(request):
             forms.save()
             return HttpResponse(f"A designation called {request.POST['desig_name']} created")
     return render(request, 'staff/designation/create.html', {'form': forms})
+
+
+class DesignationList(ListView):
+    model = Designation
+    template_name = "staff/designation/list_view.html"
 
 
 def leavetype(request):
