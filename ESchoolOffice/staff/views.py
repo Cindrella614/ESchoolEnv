@@ -2,19 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from . import form, models
 from django.views.generic import ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.contrib.messages.views import SuccessMessageMixin
-
-
-def designationCreate(request):
-    forms = form.DesignationForm
-    if request.method == 'POST':
-        forms = form.DesignationForm(request.POST)
-        if forms.is_valid():
-            forms.save()
-            return HttpResponse(f"A designation called {request.POST['desig_name']} created")
-    return render(request, 'staff/designation/create.html', {'form': forms})
-
 
 class DesignationList(ListView):
     model = models.Designation
@@ -28,6 +17,14 @@ class DesignationCreate(SuccessMessageMixin, CreateView):
     fields = '__all__'
     success_url = "/staff/designation"
     success_message = "New Designation added"
+
+
+class DesignationUpdate(SuccessMessageMixin, UpdateView):
+    model = models.Designation
+    form_class = form.DesignationForm
+    template_name = "staff/designation/designation_form.html"
+    success_message = "Designation Updated"
+    success_url = "/staff/designation"
 
 
 def leavetype(request):
@@ -50,7 +47,7 @@ def staff(request):
 
 def staffleave(request):
     forms = form.StaffLeaveForm
-    return render(request, 'staff/staffleave.html', {'form': forms})
+    return render(request, 'staff/staffleave.html', {'form1': forms2,})
 
 
 def teachersubjects(request):
