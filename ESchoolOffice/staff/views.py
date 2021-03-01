@@ -42,12 +42,28 @@ class DesignationUpdate(SuccessMessageMixin, UpdateView):
     success_url = "/staff/designation"
 
 
+class LeaveTypeUpdate(SuccessMessageMixin, UpdateView):
+    model = models.LeaveType
+    form_class = form.LeaveTypeForm
+    template_name = "staff/leavetype/leavetype_form.html"
+    success_message = "Leave Type Updated"
+    success_url = "/staff/leavetype"
+
+
 class DesignationDelete(SuccessMessageMixin, DeleteView):
     model = models.Designation
     context_object_name = "desig"
     success_url = reverse_lazy('staff:designation-list')
     success_message = "Designation Deleted"
     template_name = "staff/designation/designation_confirm_delete.html"
+
+
+class LeaveTypeDelete(SuccessMessageMixin, DeleteView):
+    model = models.LeaveType
+    context_object_name = "leavetype"
+    success_url = reverse_lazy('staff:leavetype-list')
+    success_message = "Leave Type Deleted"
+    template_name = "staff/leavetype/leavetype_confirm_delete.html"
 
 
 def leavetype(request):

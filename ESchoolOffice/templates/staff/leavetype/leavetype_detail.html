@@ -1,0 +1,12 @@
+<!-- View extended from base.html-->
+{% extends "../basic/base.html" %}
+
+<!-- Staff Content -->
+{% block staff_content %}
+
+    <!-- Delete Confirm -->
+    {% block delete_confirm %}
+    {% endblock %}
+    <br>
+    <b>{{ leavetype.id }}</b>{{leavetype}}
+{% endblock %}
