@@ -6,6 +6,9 @@ class DesignationForm(forms.ModelForm):
     class Meta:
         model = models.Designation
         fields = '__all__'
+        labels = {
+            'desig_name': 'Designation',
+        }
 
 
 class LeaveTypeForm(forms.ModelForm):
