@@ -9,6 +9,7 @@ def designationCreate(request):
         forms = form.DesignationForm(request.POST)
         if forms.is_valid():
             forms.save()
+            return HttpResponse(f"A designation called {request.POST['desig_name']} created")
     return render(request, 'staff/designation/create.html', {'form': forms})
 
 
