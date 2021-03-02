@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user_settings',
     'staff',
+    'tempus_dominus',
     'academic_settings',
     'student',
     'pta',

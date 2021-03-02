@@ -23,7 +23,19 @@
     </a>
     <ul>
         {% for staff in staff_list %}
-            Display
+            <li> {{ staff }} &emsp; {{ staff.desig_id }}&emsp;
+                <a href="">
+                    < View {{ staff.id }}>
+                </a>
+                    &emsp;
+                <a href="}">
+                    < Update {{ staff.id }} >
+                </a>
+                 &emsp;
+                <a href="}">
+                    < Delete {{ staff.id }} >
+                </a>
+            </li>
         {% empty %}
             List is Empty
         {% endfor %}

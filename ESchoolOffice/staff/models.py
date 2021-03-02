@@ -22,19 +22,19 @@ class Staff(models.Model):
         ('N', 'Non-Teaching Staff'),
     )
     STAFF_ACTIVE = (
-        (1, "Active"),
-        (0, "In-Active"),
+        (True, "Active"),
+        (False, "In-Active"),
     )
     staff_name = models.CharField(max_length=100)
     staff_address = models.CharField(max_length=300)
-    staff_contactno = models.IntegerField(unique=True)
-    staff_email = models.EmailField(max_length=100)
+    staff_contactno = models.CharField(max_length=10, unique=True)
+    staff_email = models.EmailField(max_length=100, unique=True)
     staff_dob = models.DateField()
     staff_doj = models.DateField()
-    staff_status = models.CharField(max_length=1, choices=STAFF_STATUS, unique=True, default='T')
+    staff_status = models.CharField(max_length=1, choices=STAFF_STATUS, default='T')
     desig_id = models.ForeignKey(Designation, on_delete=models.RESTRICT)
-    staff_adharno = models.IntegerField()
-    staff_active = models.BooleanField(choices=STAFF_ACTIVE, default=1)
+    staff_adharno = models.CharField(max_length=12, unique=True)
+    staff_active = models.BooleanField(choices=STAFF_ACTIVE, default=True)
 
     def __str__(self):
         return self.staff_name

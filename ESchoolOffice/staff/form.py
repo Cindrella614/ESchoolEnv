@@ -1,5 +1,6 @@
 from django import forms
 from . import models
+from tempus_dominus.widgets import DatePicker
 
 
 class DesignationForm(forms.ModelForm):
@@ -22,9 +23,26 @@ class StaffForm(forms.ModelForm):
         model = models.Staff
         fields = '__all__'
         widgets = {
-            'staff_dob': forms.DateInput(),
+            'staff_dob': DatePicker(),
+            'staff_doj': DatePicker(),
             'staff_active': forms.CheckboxInput(),
             'staff_status': forms.RadioSelect(),
+            'staff_address': forms.Textarea(attrs={'rows': 5, 'cols': 20}),
+            'staff_contactno': forms.widgets.TextInput(attrs={'min_value': 10}),
+            'staff_adharno': forms.widgets.TextInput(attrs={'min_value': 12}),
+
+        }
+        labels = {
+            'staff_name': 'Name',
+            'staff_address': 'Address',
+            'staff_contactno': 'Contact No',
+            'staff_email': 'Email',
+            'staff_dob': 'Date of Birth',
+            'staff_doj': 'Date of Join',
+            'staff_status': 'Status',
+            'desig_id' : 'Designation',
+            'staff_adharno': 'Aadhar No',
+            'staff_active': 'Active/Inactive User'
         }
 
 
