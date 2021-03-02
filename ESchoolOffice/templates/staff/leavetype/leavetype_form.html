@@ -3,9 +3,5 @@
 
 <!-- Staff Content -->
 {% block staff_content %}
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" name="Submit">
-    </form>
+    {% include "../basic/form.html" %}
 {% endblock %}

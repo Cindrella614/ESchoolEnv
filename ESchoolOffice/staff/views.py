@@ -40,6 +40,14 @@ class LeaveTypeCreate(SuccessMessageMixin, CreateView):
     success_message = "New Designation added"
 
 
+class StaffDetailsCreate(SuccessMessageMixin, CreateView):
+    model = models.Staff
+    template_name = "staff/staffdetails/staffdetails_form.html"
+    fields = '__all__'
+    success_url = reverse_lazy("staff:staff-list")
+    success_message = "A new employee added to staff"
+
+
 class DesignationUpdate(SuccessMessageMixin, UpdateView):
     model = models.Designation
     form_class = form.DesignationForm

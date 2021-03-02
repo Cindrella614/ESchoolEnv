@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^staffdetails/$', StaffDetails.as_view(), name="staff-list"),
     url(r'^designation/add/$', DesignationCreate.as_view(), name='designation-add'),
     url(r'^leavetype/add/$', LeaveTypeCreate.as_view(), name='leavetype-add'),
+    url(r'^staffdetails/add/$', StaffDetailsCreate.as_view(), name="staffdetails-add"),
     url(r'^designation/$', DesignationList.as_view(), name='designation-list'),
     url(r'^leavetype/$', LeaveTypeList.as_view(), name='leavetype-list'),
     url(r'^designation/(?P<pk>\d+)/edit/$', DesignationUpdate.as_view(), name='designationUpdate'),

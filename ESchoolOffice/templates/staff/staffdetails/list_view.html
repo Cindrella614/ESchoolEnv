@@ -18,6 +18,9 @@
 <!-- Staff Content -->
 {% block staff_content %}
     <h2>Staff</h2>
+    <a href="{% url 'staff:staffdetails-add' %}">
+        Create
+    </a>
     <ul>
         {% for staff in staff_list %}
             Display
