@@ -42,8 +42,8 @@ class LeaveTypeCreate(SuccessMessageMixin, CreateView):
 
 class StaffDetailsCreate(SuccessMessageMixin, CreateView):
     model = models.Staff
+    form_class = form.StaffForm
     template_name = "staff/staffdetails/staffdetails_form.html"
-    fields = '__all__'
     success_url = reverse_lazy("staff:staff-list")
     success_message = "A new employee added to staff"
 
