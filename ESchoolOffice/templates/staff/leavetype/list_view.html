@@ -22,7 +22,7 @@
         {% for leavetype in leavetype_list %}
         <li> {{ leavetype.leave_type }} &emsp;
             <a href="{% url 'staff:leavetypeUpdate' pk=leavetype.id %}">
-                < Update {{ designation.id }}>
+                < Update {{ leavetype.id }}>
             </a>
                 &emsp;
             <a href="{% url 'staff:leavetypeDelete' pk=leavetype.id %}">
