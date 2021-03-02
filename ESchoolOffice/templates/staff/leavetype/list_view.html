@@ -18,6 +18,9 @@
 <!-- Staff Content -->
 {% block staff_content %}
     <h2>Leave Type List</h2>
+    <a href="{% url 'staff:leavetype-add' %}">
+        Create
+    </a>
     <ul>
         {% for leavetype in leavetype_list %}
         <li> {{ leavetype.leave_type }} &emsp;

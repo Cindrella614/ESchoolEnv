@@ -18,6 +18,9 @@
 <!-- Staff Content -->
 {% block staff_content %}
     <h2>Designation List</h2>
+    <a href="{% url 'staff:designation-add' %}">
+        Create
+    </a>
     <ul>
         {% for designation in designation_list %}
         <li> {{ designation.desig_name }} &emsp;
