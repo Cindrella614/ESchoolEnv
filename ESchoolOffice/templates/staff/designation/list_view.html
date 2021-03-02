@@ -32,6 +32,8 @@
                 < Delete {{ designation.id }} >
             </a>
         </li>
+        {% empty %}
+            End
         {% endfor %}
     </ul>
 {% endblock %}

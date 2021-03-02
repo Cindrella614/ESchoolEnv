@@ -19,10 +19,10 @@
 {% block staff_content %}
     <h2>Staff</h2>
     <ul>
-        {% if not staff_list %}
-            No staff has been added
-        {% else %}
-
-        {% endif %}
+        {% for staff in staff_list %}
+            Display
+        {% empty %}
+            List is Empty
+        {% endfor %}
     </ul>
 {% endblock %}
