@@ -1,0 +1,28 @@
+<!-- View extended from base -->
+{% extends "../basic/base.html" %}
+
+<!-- Staff Title -->
+{% block staff_title %}
+    List
+{% endblock %}
+
+<!-- Display Messages if any -->
+{% block staff_message %}
+{% if messages %}
+    {% for msg in messages %}
+        {{ msg }}
+    {% endfor %}
+{% endif %}
+{% endblock %}
+
+<!-- Staff Content -->
+{% block staff_content %}
+    <h2>Staff</h2>
+    <ul>
+        {% if not staff_list %}
+            No staff has been added
+        {% else %}
+
+        {% endif %}
+    </ul>
+{% endblock %}

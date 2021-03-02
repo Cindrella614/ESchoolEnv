@@ -18,6 +18,12 @@ class LeaveTypeList(ListView):
     context_object_name = "leavetype_list"
 
 
+class StaffDetails(ListView):
+    model = models.Staff
+    template_name = "staff/staffdetails/list_view.html"
+    context_object_name = "staff_list"
+
+
 class DesignationCreate(SuccessMessageMixin, CreateView):
     model = models.Designation
     template_name = "staff/designation/designation_form.html"
@@ -81,12 +87,12 @@ def staff(request):
         forms = form.StaffForm(request.POST)
         if forms.is_valid():
             forms.save()
-    return render(request, 'staff/staffdetails.html', {'form': forms})
+    #return render(request, 'staff/staffdetails/list_view.html', {'form': forms})
 
 
 def staffleave(request):
     forms = form.StaffLeaveForm
-    return render(request, 'staff/staffleave.html', {'form1': forms2,})
+    return render(request, 'staff/staffleave.html', {'form': forms,})
 
 
 def teachersubjects(request):

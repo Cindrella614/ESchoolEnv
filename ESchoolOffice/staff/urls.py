@@ -4,7 +4,7 @@ from .views import *
 app_name = 'staff'
 
 urlpatterns = [
-    url(r'^staffdetails/$', staff, name="staffDetails"),
+    url(r'^staffdetails/$', StaffDetails.as_view(), name="staff-list"),
     url(r'^designation/add/$', DesignationCreate.as_view(), name='designation-add'),
     url(r'^leavetype/add/$', LeaveTypeCreate.as_view(), name='leavetype-add'),
     url(r'^designation/$', DesignationList.as_view(), name='designation-list'),
