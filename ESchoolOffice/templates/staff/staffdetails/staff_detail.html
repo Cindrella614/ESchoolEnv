@@ -26,14 +26,17 @@
     <b>Status:-</b>
     {% if staff_detail.staff_status == 'T' %}
         Faculty
-    {% else %}
+    {% elif staff_detail.staff_status == 'N' %}
         Non-Teaching Staff
+    {% else %}
+        Invalid
     {% endif %}
     <br>
     <b>Designation:-</b>{{ staff_detail.desig_id }}
     <br>
     <b>Aadhar No:-</b>{{ staff_detail.staff_adharno }}
     <br>
-    <b>Is the employee currently working in the institution?:-</b>{{ staff_detail.staff_active|yesno:"yes,no,invalid option" }}
+    <b>Is the employee currently working in the institution?:-</b>
+    {{ staff_detail.staff_active|yesno:"yes,no,invalid option" }}
     <br>
 {% endblock %}
