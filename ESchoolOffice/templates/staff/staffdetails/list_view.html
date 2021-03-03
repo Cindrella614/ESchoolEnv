@@ -24,15 +24,15 @@
     <ul>
         {% for staff in staff_list %}
             <li> {{ staff }} &emsp; {{ staff.desig_id }}&emsp;
-                <a href="">
+                <a href="{% url 'staff:staffdetails-one' pk=staff.id %}">
                     < View {{ staff.id }}>
                 </a>
                     &emsp;
-                <a href="}">
+                <a href="">
                     < Update {{ staff.id }} >
                 </a>
                  &emsp;
-                <a href="}">
+                <a href="">
                     < Delete {{ staff.id }} >
                 </a>
             </li>

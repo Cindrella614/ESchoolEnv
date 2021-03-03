@@ -1,0 +1,39 @@
+<!-- View extended from base.html-->
+{% extends "../basic/base.html" %}
+
+<!-- Staff Content -->
+{% block staff_content %}
+
+    <!-- Delete Confirm -->
+    {% block delete_confirm %}
+    {% endblock %}
+    <br>
+    <br>
+    <b>name:-</b>{{ staff_detail }}
+    <br>
+    <b>id:-</b>{{ staff_detail.id }}
+    <br>
+    <b>Address:-</b>{{ staff_detail.staff_address }}
+    <br>
+    <b>Contact No:-</b>{{ staff_detail.staff_contactno }}
+    <br>
+    <b>email:-</b>{{ staff_detail.staff_email }}
+    <br>
+    <b>Date of birth:-</b>{{ staff_detail.staff_dob }}
+    <br>
+    <b>Date of Join:-</b>{{ staff_detail.staff_doj }}
+    <br>
+    <b>Status:-</b>
+    {% if staff_detail.staff_status == 'T' %}
+        Faculty
+    {% else %}
+        Non-Teaching Staff
+    {% endif %}
+    <br>
+    <b>Designation:-</b>{{ staff_detail.desig_id }}
+    <br>
+    <b>Aadhar No:-</b>{{ staff_detail.staff_adharno }}
+    <br>
+    <b>Is the employee currently working in the institution?:-</b>{{ staff_detail.staff_active|yesno:"yes,no,invalid option" }}
+    <br>
+{% endblock %}

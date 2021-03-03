@@ -14,6 +14,7 @@ urlpatterns = [
     url(r'^leavetype/(?P<pk>\d+)/edit/$', LeaveTypeUpdate.as_view(), name='leavetypeUpdate'),
     url(r'^leavetype/(?P<pk>\d+)/delete/$', LeaveTypeDelete.as_view(), name='leavetypeDelete'),
     url(r'^designation/(?P<pk>\d+)/delete/$', DesignationDelete.as_view(), name='designationDelete'),
+    url(r'^staffdetails/(?P<pk>\d+)/view/$', StaffDetailsView.as_view(), name='staffdetails-one'),
     url(r'^leavetype/$', leavetype, name="leaveType"),
     url(r'^staffleave/$', staffleave, name="staffLeave"),
     url(r'^teachersubjects/$', teachersubjects, name="teacherSubjects"),

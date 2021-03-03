@@ -3,6 +3,7 @@ from django.urls import reverse_lazy
 from . import form, models
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.detail import DetailView
 from django.contrib.messages.views import SuccessMessageMixin
 
 
@@ -78,6 +79,12 @@ class LeaveTypeDelete(SuccessMessageMixin, DeleteView):
     success_url = reverse_lazy('staff:leavetype-list')
     success_message = "Leave Type Deleted"
     template_name = "staff/leavetype/leavetype_confirm_delete.html"
+
+
+class StaffDetailsView(DetailView):
+    template_name = "staff/staffdetails/staff_detail.html"
+    context_object_name = "staff_detail"
+    model = models.Staff
 
 
 def leavetype(request):
