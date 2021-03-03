@@ -1,0 +1,12 @@
+<!-- View extended from base.html-->
+{% extends "./staff_detail.html" %}
+
+
+<!-- Delete Confirm -->
+{% block delete_confirm %}
+    <form method="POST">
+        {% csrf_token %}
+        <p>Are you sure you want to delete {{ staff_detail }} <b>id:-</b>{{ staff_detail.id }}? </p>
+        <input type="submit" name="Confirm">
+    </form>
+{% endblock %}

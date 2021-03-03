@@ -89,6 +89,14 @@ class LeaveTypeDelete(SuccessMessageMixin, DeleteView):
     template_name = "staff/leavetype/leavetype_confirm_delete.html"
 
 
+class StaffDetailsDelete(SuccessMessageMixin, DeleteView):
+    model = models.Staff
+    context_object_name = "staff_detail"
+    success_url = reverse_lazy('staff:staff-list')
+    success_message = "Staff Details deleted"
+    template_name = "staff/staffdetails/staffdetails_confirm_delete.html"
+
+
 class StaffDetailsView(DetailView):
     template_name = "staff/staffdetails/staff_detail.html"
     context_object_name = "staff_detail"

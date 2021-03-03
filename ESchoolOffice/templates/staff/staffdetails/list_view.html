@@ -32,7 +32,7 @@
                     < Update {{ staff.id }} >
                 </a>
                  &emsp;
-                <a href="">
+                <a href="{% url 'staff:staffdetailsDelete' pk=staff.id %}">
                     < Delete {{ staff.id }} >
                 </a>
             </li>
