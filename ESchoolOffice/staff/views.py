@@ -65,6 +65,14 @@ class LeaveTypeUpdate(SuccessMessageMixin, UpdateView):
     success_url = "/staff/leavetype"
 
 
+class StaffDetailsUpdate(SuccessMessageMixin, UpdateView):
+    model = models.Staff
+    form_class = form.StaffForm
+    template_name = "staff/staffdetails/staffdetails_form.html"
+    success_message = "Staff Details Updated"
+    success_url = "/staff/staffdetails"
+
+
 class DesignationDelete(SuccessMessageMixin, DeleteView):
     model = models.Designation
     context_object_name = "desig"

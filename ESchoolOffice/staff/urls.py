@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^leavetype/$', LeaveTypeList.as_view(), name='leavetype-list'),
     url(r'^designation/(?P<pk>\d+)/edit/$', DesignationUpdate.as_view(), name='designationUpdate'),
     url(r'^leavetype/(?P<pk>\d+)/edit/$', LeaveTypeUpdate.as_view(), name='leavetypeUpdate'),
+    url(r'^staffdetails/(?P<pk>\d+)/edit/$', StaffDetailsUpdate.as_view(), name='staffdetailsUpdate'),
     url(r'^leavetype/(?P<pk>\d+)/delete/$', LeaveTypeDelete.as_view(), name='leavetypeDelete'),
     url(r'^designation/(?P<pk>\d+)/delete/$', DesignationDelete.as_view(), name='designationDelete'),
     url(r'^staffdetails/(?P<pk>\d+)/view/$', StaffDetailsView.as_view(), name='staffdetails-one'),
