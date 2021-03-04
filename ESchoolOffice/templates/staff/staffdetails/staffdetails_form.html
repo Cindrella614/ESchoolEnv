@@ -2,6 +2,185 @@
 {% extends "../basic/base.html" %}
 
 <!-- Form Content -->
+
 {% block staff_content %}
-    {% include "../basic/form.html" %}
+<!-- tempus dominus css and js dependency -->
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+{{ form.media }}
+
+
+    <form method="post">
+     {% csrf_token %}
+    <div class="container">
+      <h2 class="header-list">Staff Details</h2>
+
+      <div class="row">
+       <div class="col-md-12">
+                <div class="card table-bordered">
+
+                        <div class="card-header">
+                        Register a new Employee
+                    </div>
+                    <div class="card-body">
+
+                        <div class="row">
+
+                            <div class="col-md-1">
+                            </div>
+
+                            <div class="col-md-3 text-right">
+                               Name:
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.staff_name }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-1">
+                            </div>
+
+                            <div class="col-md-3 text-right">
+                               Address:
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.staff_address }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-1">
+                            </div>
+
+                            <div class="col-md-3 text-right">
+                               Contact No:
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.staff_contactno }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-1">
+                            </div>
+
+                            <div class="col-md-3 text-right">
+                               Email:
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.staff_email }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-1">
+                            </div>
+
+                            <div class="col-md-3 text-right">
+                               Date of Birth:
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.staff_dob }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-1">
+                            </div>
+
+                            <div class="col-md-3 text-right">
+                               Date of Join:
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.staff_doj }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-1">
+                            </div>
+
+                            <div class="col-md-3 text-right">
+                               Status:
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.staff_status }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-1">
+                            </div>
+
+                            <div class="col-md-3 text-right">
+                               Designation:
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.staff_designation }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-1">
+                            </div>
+
+                            <div class="col-md-3 text-right">
+                               Aadhar No:
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.staff_adharno }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-1">
+                            </div>
+
+                            <div class="col-md-3 text-right">
+                               Is this emloyee currently working here?:
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.staff_active }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                            </div>
+                            <div class="col-md-4">
+
+                            <button class="btn btn-primary btn-reset">
+                                Reset
+                            </button>
+                            </div>
+
+                            <div class="col-md-4">
+                            <button class="btn btn-success btn-save">
+                                Save
+                            </button>
+                            </div>
+
+
+                        </div>
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+    </div>
+    </form>
 {% endblock %}
