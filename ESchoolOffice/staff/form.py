@@ -22,8 +22,18 @@ class StaffForm(forms.ModelForm):
         model = models.Staff
         fields = '__all__'
         widgets = {
-            'staff_dob': forms.DateInput(),
-            'staff_doj': forms.DateInput(),
+            'staff_dob': forms.DateInput(
+                                    format='%d-%m-%Y',
+                                    attrs={
+                                        'type': 'date'
+                                    }
+                                         ),
+            'staff_doj': forms.DateInput(
+                                    format='%d-%m-%Y',
+                                    attrs={
+                                        'type': 'date'
+                                    }
+                                        ),
             'staff_active': forms.RadioSelect(),
             'staff_status': forms.RadioSelect(),
             'staff_address': forms.Textarea(attrs={'rows': 5, 'cols': 20}),
